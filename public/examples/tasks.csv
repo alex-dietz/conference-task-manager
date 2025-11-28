@@ -1,0 +1,17 @@
+Day,Start,End,Location,Task,Team,Lead,Support 1,Support 2,Support 3,Support 4,Support 5 (optional),Notes
+Thursday,8:00 AM,10:00 AM,Main Hall,Registration Setup,Logistics,Sarah Chen,Michael Torres,,,,,Set up registration tables and signage
+Thursday,9:00 AM,9:30 AM,Main Hall,Speaker Check-in,Events,David Kim,Emma Wilson,,,,,Green room briefing
+Thursday,10:00 AM,12:00 PM,Main Hall,Opening Ceremony,Events,David Kim,Sarah Chen,Michael Torres,Lisa Park,,,Main stage event
+Thursday,12:00 PM,1:30 PM,Dining Hall,Lunch Service,Catering,James Miller,Ana Garcia,,,,,Vegetarian options available
+Thursday,2:00 PM,4:00 PM,Room A,Workshop: Leadership,Events,Emma Wilson,,,,,,"Interactive session, 50 capacity"
+Thursday,2:00 PM,4:00 PM,Room B,Panel: Innovation,Events,Lisa Park,David Kim,,,,,"3 panelists confirmed"
+Thursday,4:30 PM,6:00 PM,Garden Terrace,Networking Reception,Events,Sarah Chen,Ana Garcia,Michael Torres,,,,Drinks and appetizers
+Friday,8:00 AM,9:00 AM,Main Hall,Day 2 Setup,Logistics,Michael Torres,James Miller,,,,,Check AV equipment
+Friday,9:00 AM,10:30 AM,Main Hall,Keynote: Future of Tech,Events,David Kim,Emma Wilson,,,,,CEO presentation
+Friday,10:45 AM,12:15 PM,Room A,Workshop: Marketing,Events,Lisa Park,,,,,,"Hands-on exercises"
+Friday,10:45 AM,12:15 PM,Room B,Roundtable Discussion,Events,Emma Wilson,Ana Garcia,,,,,Limited to 20 participants
+Friday,12:30 PM,2:00 PM,Dining Hall,Lunch & Learn,Catering,James Miller,Sarah Chen,,,,,Sponsored session
+Friday,2:30 PM,4:30 PM,Main Hall,Closing Panel,Events,David Kim,Lisa Park,Emma Wilson,,,,All speakers on stage
+Friday,5:00 PM,7:00 PM,Garden Terrace,Farewell Reception,Events,Sarah Chen,Michael Torres,Ana Garcia,James Miller,,,Final networking event
+Saturday,9:00 AM,11:00 AM,Main Hall,Venue Breakdown,Logistics,Michael Torres,James Miller,Sarah Chen,,,,Pack all equipment
+Saturday,11:00 AM,12:00 PM,Main Hall,Final Walkthrough,Logistics,Sarah Chen,Michael Torres,,,,,Venue inspection
