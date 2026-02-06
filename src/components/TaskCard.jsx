@@ -1,5 +1,5 @@
 import { getTeamColor } from '../utils/teamColors'
-import { formatTimeTo12Hour, getTaskTimeLevel } from '../utils/timeHelpers'
+import { formatTimeTo12Hour, getTaskTimeLevel, formatWeekRange, formatDayDate } from '../utils/timeHelpers'
 
 function TaskCard({ task }) {
   // Collect all team members (lead + supports), excluding "Blocker"
@@ -13,6 +13,13 @@ function TaskCard({ task }) {
   ].filter(member => member && member.toLowerCase() !== 'blocker')
 
   const timeLevel = getTaskTimeLevel(task)
+
+  // Compute human-readable date from calendar week + day
+  const dateLabel = timeLevel === 'week' && task.week
+    ? formatWeekRange(task.week)
+    : timeLevel === 'day' && task.week && task.day
+      ? formatDayDate(task.week, task.day)
+      : ''
 
   return (
     <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 hover:shadow-md transition-shadow">
@@ -38,14 +45,17 @@ function TaskCard({ task }) {
           </div>
           {(task.start || task.end) && (
             <p className="text-sm text-gray-600 font-medium">
-              {formatTimeTo12Hour(task.start)} {task.end && `- ${formatTimeTo12Hour(task.end)}`}
+              {task.week && task.day && formatDayDate(task.week, task.day) && (
+                <span>{formatDayDate(task.week, task.day)}, </span>
+              )}
+              {formatTimeTo12Hour(task.start)} {task.end && `– ${formatTimeTo12Hour(task.end)}`}
             </p>
           )}
-          {timeLevel === 'week' && !task.day && (
-            <p className="text-xs text-gray-400 italic">All week</p>
+          {timeLevel === 'week' && dateLabel && (
+            <p className="text-xs text-gray-500">{dateLabel}</p>
           )}
-          {timeLevel === 'day' && !task.start && (
-            <p className="text-xs text-gray-400 italic">All day</p>
+          {timeLevel === 'day' && dateLabel && (
+            <p className="text-xs text-gray-500">{dateLabel}</p>
           )}
         </div>
       </div>

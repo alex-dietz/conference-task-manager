@@ -1,26 +1,26 @@
 Week,Day,Start,End,Location,Task,Team,Lead,Support 1,Support 2,Support 3,Support 4,Support 5 (optional),Notes
-Week -2,,,,Office,Confirm all speaker travel,Events,David Kim,,,,,,Follow up with international speakers
-Week -2,,,,Office,Finalize catering menu,Catering,James Miller,Ana Garcia,,,,,Vegetarian and vegan options required
-Week -2,Wednesday,,,Office,Send sponsor packets,Communications,Lisa Park,,,,,,Digital and print versions
-Week -2,Friday,2:00 PM,4:00 PM,Office,Budget review meeting,Finance,Sarah Chen,David Kim,,,,,Q4 allocation review
-Week -1,,,,Office,Print all badges and signage,Logistics,Michael Torres,,,,,,500+ badges
-Week -1,Monday,,,Office,Ship AV equipment,Logistics,Michael Torres,James Miller,,,,,Confirm delivery address
-Week -1,Wednesday,10:00 AM,12:00 PM,Main Hall,Venue walkthrough,Logistics,Sarah Chen,Michael Torres,,,,,Meet venue coordinator
-Week -1,Thursday,2:00 PM,4:00 PM,Main Hall,AV setup and test,Logistics,Michael Torres,James Miller,,,,,Test all microphones and projectors
-Week -1,Friday,9:00 AM,11:00 AM,Main Hall,Stage rehearsal,Events,David Kim,Emma Wilson,Lisa Park,,,,Run through keynote flow
-Event Week,Thursday,8:00 AM,10:00 AM,Main Hall,Registration Setup,Logistics,Sarah Chen,Michael Torres,,,,,Set up registration tables and signage
-Event Week,Thursday,9:00 AM,9:30 AM,Main Hall,Speaker Check-in,Events,David Kim,Emma Wilson,,,,,Green room briefing
-Event Week,Thursday,10:00 AM,12:00 PM,Main Hall,Opening Ceremony,Events,David Kim,Sarah Chen,Michael Torres,Lisa Park,,,Main stage event
-Event Week,Thursday,12:00 PM,1:30 PM,Dining Hall,Lunch Service,Catering,James Miller,Ana Garcia,,,,,Vegetarian options available
-Event Week,Thursday,2:00 PM,4:00 PM,Room A,Workshop: Leadership,Events,Emma Wilson,,,,,,"Interactive session, 50 capacity"
-Event Week,Thursday,2:00 PM,4:00 PM,Room B,Panel: Innovation,Events,Lisa Park,David Kim,,,,,"3 panelists confirmed"
-Event Week,Thursday,4:30 PM,6:00 PM,Garden Terrace,Networking Reception,Events,Sarah Chen,Ana Garcia,Michael Torres,,,,Drinks and appetizers
-Event Week,Friday,8:00 AM,9:00 AM,Main Hall,Day 2 Setup,Logistics,Michael Torres,James Miller,,,,,Check AV equipment
-Event Week,Friday,9:00 AM,10:30 AM,Main Hall,Keynote: Future of Tech,Events,David Kim,Emma Wilson,,,,,CEO presentation
-Event Week,Friday,10:45 AM,12:15 PM,Room A,Workshop: Marketing,Events,Lisa Park,,,,,,"Hands-on exercises"
-Event Week,Friday,10:45 AM,12:15 PM,Room B,Roundtable Discussion,Events,Emma Wilson,Ana Garcia,,,,,Limited to 20 participants
-Event Week,Friday,12:30 PM,2:00 PM,Dining Hall,Lunch & Learn,Catering,James Miller,Sarah Chen,,,,,Sponsored session
-Event Week,Friday,2:30 PM,4:30 PM,Main Hall,Closing Panel,Events,David Kim,Lisa Park,Emma Wilson,,,,All speakers on stage
-Event Week,Friday,5:00 PM,7:00 PM,Garden Terrace,Farewell Reception,Events,Sarah Chen,Michael Torres,Ana Garcia,James Miller,,,Final networking event
-Event Week,Saturday,9:00 AM,11:00 AM,Main Hall,Venue Breakdown,Logistics,Michael Torres,James Miller,Sarah Chen,,,,Pack all equipment
-Event Week,Saturday,11:00 AM,12:00 PM,Main Hall,Final Walkthrough,Logistics,Sarah Chen,Michael Torres,,,,,Venue inspection
+CW 44,,,,Office,Confirm all speaker travel,Events,David Kim,,,,,,Follow up with international speakers
+CW 44,,,,Office,Finalize catering menu,Catering,James Miller,Ana Garcia,,,,,Vegetarian and vegan options required
+CW 44,Wednesday,,,Office,Send sponsor packets,Communications,Lisa Park,,,,,,Digital and print versions
+CW 44,Friday,2:00 PM,4:00 PM,Office,Budget review meeting,Finance,Sarah Chen,David Kim,,,,,Q4 allocation review
+CW 45,,,,Office,Print all badges and signage,Logistics,Michael Torres,,,,,,500+ badges
+CW 45,Monday,,,Office,Ship AV equipment,Logistics,Michael Torres,James Miller,,,,,Confirm delivery address
+CW 45,Wednesday,10:00 AM,12:00 PM,Main Hall,Venue walkthrough,Logistics,Sarah Chen,Michael Torres,,,,,Meet venue coordinator
+CW 45,Thursday,2:00 PM,4:00 PM,Main Hall,AV setup and test,Logistics,Michael Torres,James Miller,,,,,Test all microphones and projectors
+CW 45,Friday,9:00 AM,11:00 AM,Main Hall,Stage rehearsal,Events,David Kim,Emma Wilson,Lisa Park,,,,Run through keynote flow
+CW 46,Thursday,8:00 AM,10:00 AM,Main Hall,Registration Setup,Logistics,Sarah Chen,Michael Torres,,,,,Set up registration tables and signage
+CW 46,Thursday,9:00 AM,9:30 AM,Main Hall,Speaker Check-in,Events,David Kim,Emma Wilson,,,,,Green room briefing
+CW 46,Thursday,10:00 AM,12:00 PM,Main Hall,Opening Ceremony,Events,David Kim,Sarah Chen,Michael Torres,Lisa Park,,,Main stage event
+CW 46,Thursday,12:00 PM,1:30 PM,Dining Hall,Lunch Service,Catering,James Miller,Ana Garcia,,,,,Vegetarian options available
+CW 46,Thursday,2:00 PM,4:00 PM,Room A,Workshop: Leadership,Events,Emma Wilson,,,,,,"Interactive session, 50 capacity"
+CW 46,Thursday,2:00 PM,4:00 PM,Room B,Panel: Innovation,Events,Lisa Park,David Kim,,,,,"3 panelists confirmed"
+CW 46,Thursday,4:30 PM,6:00 PM,Garden Terrace,Networking Reception,Events,Sarah Chen,Ana Garcia,Michael Torres,,,,Drinks and appetizers
+CW 46,Friday,8:00 AM,9:00 AM,Main Hall,Day 2 Setup,Logistics,Michael Torres,James Miller,,,,,Check AV equipment
+CW 46,Friday,9:00 AM,10:30 AM,Main Hall,Keynote: Future of Tech,Events,David Kim,Emma Wilson,,,,,CEO presentation
+CW 46,Friday,10:45 AM,12:15 PM,Room A,Workshop: Marketing,Events,Lisa Park,,,,,,"Hands-on exercises"
+CW 46,Friday,10:45 AM,12:15 PM,Room B,Roundtable Discussion,Events,Emma Wilson,Ana Garcia,,,,,Limited to 20 participants
+CW 46,Friday,12:30 PM,2:00 PM,Dining Hall,Lunch & Learn,Catering,James Miller,Sarah Chen,,,,,Sponsored session
+CW 46,Friday,2:30 PM,4:30 PM,Main Hall,Closing Panel,Events,David Kim,Lisa Park,Emma Wilson,,,,All speakers on stage
+CW 46,Friday,5:00 PM,7:00 PM,Garden Terrace,Farewell Reception,Events,Sarah Chen,Michael Torres,Ana Garcia,James Miller,,,Final networking event
+CW 46,Saturday,9:00 AM,11:00 AM,Main Hall,Venue Breakdown,Logistics,Michael Torres,James Miller,Sarah Chen,,,,Pack all equipment
+CW 46,Saturday,11:00 AM,12:00 PM,Main Hall,Final Walkthrough,Logistics,Sarah Chen,Michael Torres,,,,,Venue inspection
