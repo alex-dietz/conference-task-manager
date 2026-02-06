@@ -167,8 +167,9 @@ async function fetchAndParseGenericCSV(url, config = {}) {
  */
 export async function fetchAndParseCSV(url) {
   return fetchAndParseGenericCSV(url, {
-    headerKeyword: 'Day',
+    headerKeyword: 'Week',
     headerMap: {
+      'Week': 'week',
       'Day': 'day',
       'Start': 'start',
       'End': 'end',
@@ -186,6 +187,7 @@ export async function fetchAndParseCSV(url) {
     filterFn: (row) => row.task && row.task.trim() !== '',
     mapFn: (row, index) => ({
       id: index + 1,
+      week: row.week || '',
       day: row.day || '',
       start: convertTo24Hour(row.start) || '',
       end: convertTo24Hour(row.end) || '',
@@ -264,12 +266,14 @@ export async function fetchAndParseLocationsCSV(url) {
  * @returns {Object} Object containing unique values for each filterable field
  */
 export function extractFilterOptions(tasks) {
+  const weeks = new Set()
   const days = new Set()
   const locations = new Set()
   const teams = new Set()
   const people = new Set()
 
   tasks.forEach(task => {
+    if (task.week) weeks.add(task.week)
     if (task.day) days.add(task.day)
     if (task.location) locations.add(task.location)
     if (task.team) teams.add(task.team)
@@ -282,6 +286,7 @@ export function extractFilterOptions(tasks) {
   })
 
   return {
+    weeks: Array.from(weeks),
     days: Array.from(days).sort(),
     locations: Array.from(locations).sort(),
     teams: Array.from(teams).filter(team => team.toLowerCase() !== 'blocker').sort(),
