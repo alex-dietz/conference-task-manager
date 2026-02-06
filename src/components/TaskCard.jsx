@@ -1,5 +1,5 @@
 import { getTeamColor } from '../utils/teamColors'
-import { formatTimeTo12Hour } from '../utils/timeHelpers'
+import { formatTimeTo12Hour, getTaskTimeLevel, formatWeekRange, formatDayDate } from '../utils/timeHelpers'
 
 function TaskCard({ task }) {
   // Collect all team members (lead + supports), excluding "Blocker"
@@ -12,12 +12,26 @@ function TaskCard({ task }) {
     task.support5
   ].filter(member => member && member.toLowerCase() !== 'blocker')
 
+  const timeLevel = getTaskTimeLevel(task)
+
+  // Compute human-readable date from calendar week + day
+  const dateLabel = timeLevel === 'week' && task.week
+    ? formatWeekRange(task.week)
+    : timeLevel === 'day' && task.week && task.day
+      ? formatDayDate(task.week, task.day)
+      : ''
+
   return (
     <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 hover:shadow-md transition-shadow">
-      {/* Header: Day and Time */}
+      {/* Header: Week, Day, and Time */}
       <div className="flex items-start justify-between mb-3">
         <div className="flex-1">
-          <div className="flex items-center gap-2 mb-1">
+          <div className="flex items-center gap-2 mb-1 flex-wrap">
+            {task.week && (
+              <span className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-violet-100 text-violet-800">
+                {task.week}
+              </span>
+            )}
             {task.day && (
               <span className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-brand-100 text-brand-800">
                 {task.day}
@@ -31,8 +45,17 @@ function TaskCard({ task }) {
           </div>
           {(task.start || task.end) && (
             <p className="text-sm text-gray-600 font-medium">
-              {formatTimeTo12Hour(task.start)} {task.end && `- ${formatTimeTo12Hour(task.end)}`}
+              {task.week && task.day && formatDayDate(task.week, task.day) && (
+                <span>{formatDayDate(task.week, task.day)}, </span>
+              )}
+              {formatTimeTo12Hour(task.start)} {task.end && `– ${formatTimeTo12Hour(task.end)}`}
             </p>
+          )}
+          {timeLevel === 'week' && dateLabel && (
+            <p className="text-xs text-gray-500">{dateLabel}</p>
+          )}
+          {timeLevel === 'day' && dateLabel && (
+            <p className="text-xs text-gray-500">{dateLabel}</p>
           )}
         </div>
       </div>

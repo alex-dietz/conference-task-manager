@@ -5,7 +5,7 @@ import FilterModal from '../FilterModal'
 import TaskList from '../TaskList'
 import { useFilters } from '../../hooks/useFilters'
 import { useDirectory } from '../../hooks/useDirectory'
-import { parseTaskTime } from '../../utils/timeHelpers'
+import { getTaskSortTime } from '../../utils/timeHelpers'
 
 /**
  * All Tab - Complete task list with full filtering
@@ -16,13 +16,14 @@ export default function AllTab({ tasks, loading, error }) {
   const { people } = useDirectory()
   const { filteredTasks, filters, setFilter, clearFilters } = useFilters(tasks, people)
 
-  // Sort filtered tasks chronologically by start time
+  // Sort filtered tasks chronologically (works across all time abstraction levels)
   const sortedTasks = useMemo(() => {
-    const currentTime = new Date()
     return [...filteredTasks].sort((a, b) => {
-      const timeA = parseTaskTime(a, currentTime, false)
-      const timeB = parseTaskTime(b, currentTime, false)
-      if (!timeA || !timeB) return 0
+      const timeA = getTaskSortTime(a)
+      const timeB = getTaskSortTime(b)
+      if (!timeA && !timeB) return 0
+      if (!timeA) return 1
+      if (!timeB) return -1
       return timeA - timeB
     })
   }, [filteredTasks])
