@@ -1,4 +1,5 @@
 import Papa from 'papaparse'
+import { parseWeekNumber } from './timeHelpers'
 
 /**
  * Converts 12-hour time format (with AM/PM) to 24-hour format
@@ -285,9 +286,11 @@ export function extractFilterOptions(tasks) {
     if (task.support5) people.add(task.support5)
   })
 
+  const dayOrder = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+
   return {
-    weeks: Array.from(weeks),
-    days: Array.from(days).sort(),
+    weeks: Array.from(weeks).sort((a, b) => (parseWeekNumber(a) || 0) - (parseWeekNumber(b) || 0)),
+    days: Array.from(days).sort((a, b) => dayOrder.indexOf(a) - dayOrder.indexOf(b)),
     locations: Array.from(locations).sort(),
     teams: Array.from(teams).filter(team => team.toLowerCase() !== 'blocker').sort(),
     people: Array.from(people).filter(person => person.toLowerCase() !== 'blocker').sort()

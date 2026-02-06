@@ -2,9 +2,15 @@
  * Central configuration file for the Conference Task Manager
  *
  * Customize these values for your event:
- * - Update eventDates with your conference dates
+ * - Set eventYear to the year your conference takes place
  * - Modify teamColors to match your teams
  * - Set branding via environment variables
+ *
+ * Week/Day dates are computed automatically from ISO calendar week numbers.
+ * In the Google Sheet, use:
+ *   Week column: calendar week number (e.g. "44", "CW 45", "CW46")
+ *   Day column:  day name (e.g. "Monday", "Thursday")
+ * The app resolves these to real dates automatically.
  */
 
 export const config = {
@@ -12,32 +18,9 @@ export const config = {
   appTitle: import.meta.env.VITE_APP_TITLE || 'Conference Tasks',
   appSubtitle: import.meta.env.VITE_APP_SUBTITLE || '',
 
-  // Event weeks configuration
-  // Maps week labels to date ranges for week-level task scheduling.
-  // Tasks can be assigned to a week (with optional day and time) to support
-  // different time abstraction levels:
-  //   Week only       → task spans entire week (e.g., "Confirm speakers")
-  //   Week + Day      → task on a specific day, no fixed time (e.g., "Print badges")
-  //   Week + Day+Time → fully scheduled task (e.g., "Rehearsal 2-4 PM Wednesday")
-  //   Day + Time only → legacy format, no week context (backward compatible)
-  // Month is 0-indexed: 0=January, 1=February, ..., 10=November, 11=December
-  eventWeeks: {
-    'Week -2': { start: { year: 2025, month: 9, day: 27 }, end: { year: 2025, month: 10, day: 2 } },
-    'Week -1': { start: { year: 2025, month: 10, day: 3 }, end: { year: 2025, month: 10, day: 9 } },
-    'Event Week': { start: { year: 2025, month: 10, day: 10 }, end: { year: 2025, month: 10, day: 16 } },
-  },
-
-  // Event dates configuration
-  // Month is 0-indexed: 0=January, 1=February, ..., 10=November, 11=December
-  eventDates: {
-    'Monday': { year: 2025, month: 10, day: 10 },
-    'Tuesday': { year: 2025, month: 10, day: 11 },
-    'Wednesday': { year: 2025, month: 10, day: 12 },
-    'Thursday': { year: 2025, month: 10, day: 13 },
-    'Friday': { year: 2025, month: 10, day: 14 },
-    'Saturday': { year: 2025, month: 10, day: 15 },
-    'Sunday': { year: 2025, month: 10, day: 16 }
-  },
+  // The year the event takes place.
+  // Used together with the calendar week number from the sheet to compute dates.
+  eventYear: 2025,
 
   // Timezone offset from UTC (e.g., -5 for EST, -8 for PST)
   timezoneOffset: -5,
