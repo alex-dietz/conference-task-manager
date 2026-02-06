@@ -13,6 +13,7 @@ export function useFilters(tasks, people = []) {
 
   // Initialize filters from URL params
   const [filters, setFilters] = useState({
+    week: searchParams.get('week') || '',
     day: searchParams.get('day') || '',
     location: searchParams.get('location') || '',
     team: searchParams.get('team') || '',
@@ -25,7 +26,7 @@ export function useFilters(tasks, people = []) {
     const params = new URLSearchParams(searchParams) // Preserve existing params
 
     // Remove all filter keys first
-    const filterKeys = ['day', 'location', 'team', 'person', 'search']
+    const filterKeys = ['week', 'day', 'location', 'team', 'person', 'search']
     filterKeys.forEach(key => params.delete(key))
 
     // Add back active filters
@@ -41,6 +42,11 @@ export function useFilters(tasks, people = []) {
   // Filter tasks based on current filters
   const filteredTasks = useMemo(() => {
     return tasks.filter(task => {
+      // Week filter
+      if (filters.week && task.week !== filters.week) {
+        return false
+      }
+
       // Day filter
       if (filters.day && task.day !== filters.day) {
         return false
@@ -90,10 +96,11 @@ export function useFilters(tasks, people = []) {
         }
       }
 
-      // Search filter (searches across task, notes, location, team, and assigned people)
+      // Search filter (searches across week, task, notes, location, team, and assigned people)
       if (filters.search) {
         const searchTerm = filters.search.toLowerCase()
         const searchableFields = [
+          task.week,
           task.task,
           task.notes,
           task.location,
@@ -126,6 +133,7 @@ export function useFilters(tasks, people = []) {
   // Clear all filters
   const clearFilters = () => {
     setFilters({
+      week: '',
       day: '',
       location: '',
       team: '',

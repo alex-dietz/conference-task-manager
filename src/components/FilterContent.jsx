@@ -23,7 +23,21 @@ function FilterContent({ filters, setFilter, clearFilters, tasks }) {
       </div>
 
       {/* Filter Dropdowns */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+        {/* Week Filter */}
+        {filterOptions.weeks.length > 0 && (
+          <select
+            value={filters.week}
+            onChange={(e) => setFilter('week', e.target.value)}
+            className="px-3 py-3 md:py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-600 focus:border-transparent outline-none text-sm bg-white"
+          >
+            <option value="">All Weeks</option>
+            {filterOptions.weeks.map(week => (
+              <option key={week} value={week}>{week}</option>
+            ))}
+          </select>
+        )}
+
         {/* Day Filter */}
         <select
           value={filters.day}
@@ -76,6 +90,17 @@ function FilterContent({ filters, setFilter, clearFilters, tasks }) {
       {/* Active Filters Display */}
       {hasActiveFilters && (
         <div className="mt-4 flex flex-wrap gap-2">
+          {filters.week && (
+            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-violet-100 text-violet-800">
+              Week: {filters.week}
+              <button
+                onClick={() => setFilter('week', '')}
+                className="ml-2 hover:text-violet-900"
+              >
+                ×
+              </button>
+            </span>
+          )}
           {filters.day && (
             <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-brand-100 text-brand-800">
               Day: {filters.day}

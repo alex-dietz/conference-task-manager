@@ -137,6 +137,23 @@ export default function NowTab({ tasks, loading }) {
         </section>
       )}
 
+      {/* FUTURE Section - Blue */}
+      {groupedTasks.future.length > 0 && (
+        <section>
+          <div className="flex items-center gap-2 mb-3">
+            <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+            <h2 className="text-lg font-semibold text-blue-600 uppercase tracking-wide">
+              Future Tasks ({groupedTasks.future.length})
+            </h2>
+          </div>
+          <div className="space-y-3">
+            {groupedTasks.future.map((task, index) => (
+              <TaskCard key={`${task.id || index}-future`} task={task} />
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* PAST Section - Collapsed by default */}
       {groupedTasks.past.length > 0 && (
         <section>
