@@ -20,7 +20,7 @@ export const config = {
 
   // The year the event takes place.
   // Used together with the calendar week number from the sheet to compute dates.
-  eventYear: 2025,
+  eventYear: 2026,
 
   // Timezone offset from UTC (e.g., -5 for EST, -8 for PST)
   timezoneOffset: -5,
